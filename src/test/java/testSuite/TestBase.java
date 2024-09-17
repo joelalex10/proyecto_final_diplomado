@@ -2,6 +2,7 @@ package testSuite;
 
 import activities.AdminActivity;
 import activities.LoginActivity;
+import activities.UserActivity;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import singletonSession.Session;
@@ -10,11 +11,13 @@ public class TestBase {
 
     protected LoginActivity loginActivity;
     protected AdminActivity adminActivity;
+    protected UserActivity userActivity;
 
     @BeforeEach
     public void openApp(){
         loginActivity = new LoginActivity();
         adminActivity = new AdminActivity();
+        userActivity = new UserActivity();
     }
     @AfterEach
     public void closeApp(){

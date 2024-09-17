@@ -1,9 +1,6 @@
 package activities;
 
-import controls.Button;
-import controls.Label;
-import controls.TextBox;
-import controls.Toast;
+import controls.*;
 import factoryDevices.Android;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.WaitOptions;
@@ -20,6 +17,7 @@ public class LoginActivity {
     public TextBox passwordEditText = new TextBox(By.id("com.solunes.endeapp:id/edit_pass"));
     public Button saveButton = new Button(By.id("com.solunes.endeapp:id/btn_signup"));
     public Label versionNameLabel = new Label(By.id("com.solunes.endeapp:id/label_version_name"));
+    public AlertDialog alertDialog = new AlertDialog(By.xpath("//android.widget.LinearLayout[@resource-id=\"com.solunes.endeapp:id/parentPanel\"]"));
 
 
     public boolean isToastDisplayed() {
@@ -33,5 +31,7 @@ public class LoginActivity {
     }
 
 
-
+    public boolean isMessageDisplayed() {
+        return alertDialog.waitForAlertDialogVisibility();
+    }
 }

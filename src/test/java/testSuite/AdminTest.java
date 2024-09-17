@@ -32,7 +32,8 @@ public class AdminTest extends TestBase{
     @Test
     public void checkDownloadFixedParameters(){
         loginAsAdmin();
-
-        Assertions.assertTrue(adminActivity.isTplRegistered("Nro Tpl: "+tplName));
+        adminActivity.downloadFixedParametersButton.clickControl();
+        //adminActivity
+        Assertions.assertTrue(adminActivity.isConfirmFixedParameters());
     }
 }
