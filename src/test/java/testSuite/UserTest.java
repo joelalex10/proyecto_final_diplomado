@@ -1,17 +1,39 @@
 package testSuite;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 public class UserTest extends TestBase{
+
+
+    @Test
+    public void checkDownloadLecturas(){
+        String tplNumber = "20";
+        String userName = "user20";
+        String value = "0";
+        loginAsUser(tplNumber, userName);
+        userActivity.downloadLecturas.clickControl();
+        Assertions.assertTrue(userActivity.facturasLabel.checkChangeValueLabel(value));
+    }
+    @Test
+    public void checkUploadLecturas(){
+        String tplNumber = "20";
+        String userName = "user20";
+        loginAsUser(tplNumber, userName);
+
+    }
+    @Test
+    public void checkUploadFotografias(){
+        String tplNumber = "20";
+        String userName = "user20";
+        loginAsUser(tplNumber, userName);
+
+    }
+
     // TODO: Desarrollar los siguientes metodos
     // - Descarga de lecturas
     // - Descarga de parametros fijos
     // - Ir a pantalla de gestion de lecturas
-
-    // TODO: Gestion de pantalla de lecturas
-    // - Lectura Normal
-    // - Consumo elevado
-    // - Calculo fuera de rango
-    // - Funcionalidad buscador
-    // - Lecturas gran demanda
 
 
 }

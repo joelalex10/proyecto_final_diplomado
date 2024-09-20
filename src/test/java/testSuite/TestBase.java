@@ -4,6 +4,7 @@ import activities.AdminActivity;
 import activities.LoginActivity;
 import activities.UserActivity;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import singletonSession.Session;
 
@@ -29,6 +30,19 @@ public class TestBase {
         loginActivity.nameEditText.setText("admin");
         loginActivity.passwordEditText.setText("4dm1n.123");
         loginActivity.saveButton.clickControl();
+    }
+    public void loginAsUser(String tplNumber, String userName){
+        String password = "1234";
+        loginAsAdmin();
+        adminActivity.tplEditText.setText(tplNumber);
+        adminActivity.registerTplButton.clickControl();
+        adminActivity.confirmTlp("ACEPTAR");
+        adminActivity.overFlowMenu.clickControl();
+        adminActivity.overFlowMenu.selectOptionByText("Salir");
+        loginActivity.nameEditText.setText(userName);
+        loginActivity.passwordEditText.setText(password);
+        loginActivity.saveButton.clickControl();
+        Assertions.assertTrue(userActivity.isUserActivityDisplayed());
     }
 
 }
