@@ -19,10 +19,10 @@ public class Android implements IDevices{
         config.setCapability("appium:appActivity", "com.solunes.endeapp.activities.LoginActivity");
         config.setCapability("platformName", "Android");
         config.setCapability("appium:automationName", "uiautomator2");
-        config.setCapability("appium:unicodeKeyboard", false);
-        config.setCapability("appium:resetKeyboard", false);
-        config.setCapability("appium:disablePopup", true);
-        config.setCapability("appium:hideKeyboard", true);
+        //config.setCapability("appium:unicodeKeyboard", false);
+        //config.setCapability("appium:resetKeyboard", false);
+        //config.setCapability("appium:disablePopup", true);
+        //config.setCapability("appium:hideKeyboard", true);
         config.setCapability("appium:autoGrantPermissions", true);
         AndroidDriver driver = null;
         try{

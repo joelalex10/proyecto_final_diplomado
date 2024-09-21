@@ -2,6 +2,7 @@ package testSuite;
 
 import activities.AdminActivity;
 import activities.LoginActivity;
+import activities.ReadingActivity;
 import activities.UserActivity;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -13,12 +14,14 @@ public class TestBase {
     protected LoginActivity loginActivity;
     protected AdminActivity adminActivity;
     protected UserActivity userActivity;
+    protected ReadingActivity readingActivity;
 
     @BeforeEach
     public void openApp(){
         loginActivity = new LoginActivity();
         adminActivity = new AdminActivity();
         userActivity = new UserActivity();
+        readingActivity = new ReadingActivity();
     }
     @AfterEach
     public void closeApp(){
@@ -31,12 +34,19 @@ public class TestBase {
         loginActivity.passwordEditText.setText("4dm1n.123");
         loginActivity.saveButton.clickControl();
     }
-    public void loginAsUser(String tplNumber, String userName){
+    public void loginAsUser(String tplNumber, String userName, String printerName){
         String password = "1234";
         loginAsAdmin();
+        adminActivity.printerEditText.setText(printerName);
+        adminActivity.registerPrintButton.clickControl();
         adminActivity.tplEditText.setText(tplNumber);
         adminActivity.registerTplButton.clickControl();
         adminActivity.confirmTlp("ACEPTAR");
+
+        adminActivity.downloadFixedParametersButton.clickControl();
+        adminActivity.isConfirmFixedParameters();
+        adminActivity.alertDialogConfirmFixedParameters.clickAlertDialogButton("ACEPTAR");
+
         adminActivity.overFlowMenu.clickControl();
         adminActivity.overFlowMenu.selectOptionByText("Salir");
         loginActivity.nameEditText.setText(userName);

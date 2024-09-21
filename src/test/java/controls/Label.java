@@ -23,7 +23,7 @@ public class Label extends Control {
     }
     public boolean checkChangeValueLabel(String nuevoValor){
         boolean result = false;
-        WebDriverWait wait = new WebDriverWait(Session.getInstance().getDevice(), Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(Session.getInstance().getDevice(), Duration.ofSeconds(15));
         result = wait.until(ExpectedConditions.textToBePresentInElementLocated(
                 super.locator,
                 nuevoValor

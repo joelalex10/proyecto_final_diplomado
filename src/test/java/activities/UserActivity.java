@@ -9,6 +9,7 @@ public class UserActivity {
     public Button sendLecturas = new Button(By.xpath("//android.widget.FrameLayout[@resource-id=\"com.solunes.endeapp:id/layout_send_reading\"]"));
     public Button sendFotografias = new Button(By.xpath("//android.widget.FrameLayout[@resource-id=\"com.solunes.endeapp:id/layout_send_reading_pictures\"]"));
     public Label facturasLabel = new Label(By.xpath("//android.widget.TextView[@resource-id=\"com.solunes.endeapp:id/state_performed\"]"));
+    public Button empezarLecturas = new Button(By.xpath("//android.widget.Button[@text=\"EMPEZAR\"]"));
 
     public boolean isUserActivityDisplayed() {
         Label appBarTitle = new Label(By.xpath("//android.widget.TextView[@text=\"Lefimovil LP\"]"));

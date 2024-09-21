@@ -11,7 +11,8 @@ public class UserTest extends TestBase{
         String tplNumber = "20";
         String userName = "user20";
         String value = "0";
-        loginAsUser(tplNumber, userName);
+        String printerName = "endelp1";
+        loginAsUser(tplNumber, userName,printerName);
         userActivity.downloadLecturas.clickControl();
         Assertions.assertTrue(userActivity.facturasLabel.checkChangeValueLabel(value));
     }
@@ -19,14 +20,16 @@ public class UserTest extends TestBase{
     public void checkUploadLecturas(){
         String tplNumber = "20";
         String userName = "user20";
-        loginAsUser(tplNumber, userName);
+        String printerName = "endelp1";
+        loginAsUser(tplNumber, userName, printerName);
 
     }
     @Test
     public void checkUploadFotografias(){
         String tplNumber = "20";
         String userName = "user20";
-        loginAsUser(tplNumber, userName);
+        String printerName = "endelp1";
+        loginAsUser(tplNumber, userName, printerName);
 
     }
 
