@@ -13,7 +13,8 @@ public class Android implements IDevices{
     public AppiumDriver createAppiumDriver() {
         System.out.println("Iniciando la prueba");
         DesiredCapabilities config = new DesiredCapabilities();
-        config.setCapability("appium:deviceName", "TECNO POVA");
+        //config.setCapability("appium:deviceName", "TECNO POVA");
+        config.setCapability("appium:deviceName", "HUAWEI SNE-LX3");
         config.setCapability("appium:platformVersion", "10.0");
         config.setCapability("appium:appPackage", "com.solunes.endeapp");
         config.setCapability("appium:appActivity", "com.solunes.endeapp.activities.LoginActivity");

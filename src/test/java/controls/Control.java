@@ -17,10 +17,14 @@ public class Control {
     }
     public void clickControl(){
         this.findControl();
+        org.openqa.selenium.Point location = this.control.getLocation(); // Obtiene la ubicación (x, y)
+        System.out.println("Coordenadas del control: X=" + location.getX() + " Y=" + location.getY()); // Imprime las coordenadas
         this.control.click();
+
     }
     public String getTextControl(){
         this.findControl();
+
         return this.control.getText();
     }
     public boolean isControlDisplayed(){
