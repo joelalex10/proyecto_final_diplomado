@@ -30,7 +30,7 @@ public class RegistroLecturasTest extends TestBase {
         String userName = "user20";
         String value = "0";
         String printerName = "endelp1";
-        String nroConsumidor = "6385";
+        String nroConsumidor = "505648";
         loginAsUser(tplNumber, userName, printerName);
         userActivity.downloadLecturas.clickControl();
         userActivity.facturasLabel.checkChangeValueLabel(value);
@@ -45,7 +45,7 @@ public class RegistroLecturasTest extends TestBase {
         String userName = "user20";
         String value = "0";
         String printerName = "endelp1";
-        String nroConsumidor = "6385";
+        String nroConsumidor = "285979";
         int registroLectura = 99000;
 
         loginAsUser(tplNumber, userName, printerName);
