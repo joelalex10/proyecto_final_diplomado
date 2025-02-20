@@ -14,8 +14,8 @@ public class Android implements IDevices{
         System.out.println("Iniciando la prueba");
         DesiredCapabilities config = new DesiredCapabilities();
         //config.setCapability("appium:deviceName", "TECNO POVA");
-        config.setCapability("appium:deviceName", "HUAWEI SNE-LX3");
-        config.setCapability("appium:platformVersion", "10.0");
+        config.setCapability("appium:deviceName", "CS45XA");
+        config.setCapability("appium:platformVersion", "9.0");
         config.setCapability("appium:appPackage", "com.solunes.endeapp");
         config.setCapability("appium:appActivity", "com.solunes.endeapp.activities.LoginActivity");
         config.setCapability("platformName", "Android");

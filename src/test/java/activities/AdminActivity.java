@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 import controls.OverflowMenu;
 
 public class AdminActivity {
-
+    public Button registeruRLButton = new Button(By.id("com.solunes.endeapp:id/btn_save_domain"));
     public TextBox printerEditText = new TextBox(By.id("com.solunes.endeapp:id/edit_print_name"));
     public TextBox tplEditText = new TextBox(By.id("com.solunes.endeapp:id/edit_nro_tpl"));
     public Button registerPrintButton = new Button(By.id("com.solunes.endeapp:id/btn_print_name"));

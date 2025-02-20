@@ -7,7 +7,7 @@ import controls.Toast;
 import org.openqa.selenium.By;
 
 public class UserActivity {
-    public Button downloadLecturas = new Button(By.xpath("//android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.FrameLayout[1]"));
+    public Button downloadLecturas = new Button(By.xpath("//android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.FrameLayout[1]/android.widget.LinearLayout"));
     public Button sendLecturas = new Button(By.xpath("//android.widget.FrameLayout[@resource-id=\"com.solunes.endeapp:id/layout_send_reading\"]"));
 
     public Button sendFotografias = new Button(By.xpath("//android.widget.FrameLayout[@resource-id=\"com.solunes.endeapp:id/layout_send_reading_pictures\"]"));
@@ -20,7 +20,7 @@ public class UserActivity {
 
 
     public boolean isUserActivityDisplayed() {
-        Label appBarTitle = new Label(By.xpath("//android.widget.TextView[@text=\"Lefimovil LP\"]"));
+        Label appBarTitle = new Label(By.xpath("//android.widget.TextView[@text=\"Lefimovil EDO\"]"));
         return appBarTitle.waitForVisibility();
     }
 

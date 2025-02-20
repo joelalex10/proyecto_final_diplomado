@@ -13,6 +13,7 @@ public class TestBase {
     protected UserActivity userActivity;
     protected ReadingActivity readingActivity;
     protected CameraActivity cameraActivity;
+    protected ReadingGranDemandaActivity readingGranDemandaActivity;
 
     @BeforeEach
     public void openApp(){
@@ -21,21 +22,25 @@ public class TestBase {
         userActivity = new UserActivity();
         readingActivity = new ReadingActivity();
         cameraActivity = new CameraActivity();
+        readingGranDemandaActivity = new ReadingGranDemandaActivity();
     }
     @AfterEach
     public void closeApp(){
         Session.getInstance().closeSession();
     }
-    public void loginAsAdmin() {
+    public void loginAsAdmin(String username, String password) {
         //loginActivity.versionNameLabel.clickControl();
         //loginActivity.versionNameLabel.clickControl();
-        loginActivity.nameEditText.setText("admin");
-        loginActivity.passwordEditText.setText("4dm1n.123");
+        loginActivity.nameEditText.setText(username);
+        loginActivity.passwordEditText.setText(password);
         loginActivity.saveButton.clickControl();
     }
-    public void loginAsUser(String tplNumber, String userName, String printerName){
-        String password = "1234";
-        loginAsAdmin();
+    public void loginAsUser(String adminUserName, String adminpassword, String tplNumber, String userName, String userPassword, String printerName){
+
+        loginAsAdmin(adminUserName,adminpassword);
+
+        adminActivity.registeruRLButton.clickControl();
+        adminActivity.registerPrintButton.clickControl();
         adminActivity.printerEditText.setText(printerName);
         adminActivity.registerPrintButton.clickControl();
         adminActivity.tplEditText.setText(tplNumber);
@@ -49,7 +54,7 @@ public class TestBase {
         adminActivity.overFlowMenu.clickControl();
         adminActivity.overFlowMenu.selectOptionByText("Salir");
         loginActivity.nameEditText.setText(userName);
-        loginActivity.passwordEditText.setText(password);
+        loginActivity.passwordEditText.setText(userPassword);
         loginActivity.saveButton.clickControl();
         Assertions.assertTrue(userActivity.isUserActivityDisplayed());
     }

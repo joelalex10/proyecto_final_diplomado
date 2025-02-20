@@ -7,8 +7,8 @@ public class LoginTest extends TestBase{
     @Test
     public void checkLoginAsAdminValidCredentials(){
 
-        String username = "admin";
-        String password = "4dm1n.123";
+        String username = "admin.prueba";
+        String password = "ZXCVB";
 
         loginActivity.versionNameLabel.clickControl();
         loginActivity.versionNameLabel.clickControl();
@@ -30,12 +30,12 @@ public class LoginTest extends TestBase{
     }
     @Test
     public void checkLoginAsUserValidCredentials(){
-        String username = "user20";
+        String username = "user250";
         String password = "1234";
 
-        String tplName = "20";
+        String tplName = "250";
 
-        loginAsAdmin();
+        loginAsAdmin("admin","1234");
         adminActivity.tplEditText.setText(tplName);
         adminActivity.registerTplButton.clickControl();
         adminActivity.confirmTlp("ACEPTAR");
@@ -54,7 +54,7 @@ public class LoginTest extends TestBase{
 
         String tplName = "20";
 
-        loginAsAdmin();
+        loginAsAdmin("admin","4dm1n.123");
         adminActivity.tplEditText.setText(tplName);
         adminActivity.registerTplButton.clickControl();
         adminActivity.confirmTlp("ACEPTAR");

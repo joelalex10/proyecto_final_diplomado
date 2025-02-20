@@ -8,7 +8,7 @@ public class Control {
 
 
     protected By locator;
-    protected WebElement control;
+    public WebElement control;
     public Control(By locator) {
         this.locator = locator;
     }

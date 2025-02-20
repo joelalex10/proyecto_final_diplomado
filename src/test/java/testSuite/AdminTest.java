@@ -9,7 +9,7 @@ public class AdminTest extends TestBase{
 
         String printerName = "endelp1";
 
-        loginAsAdmin();
+        loginAsAdmin("admin","4dm1n.123");
 
         adminActivity.printerEditText.setText(printerName);
         adminActivity.registerPrintButton.clickControl();
@@ -21,7 +21,7 @@ public class AdminTest extends TestBase{
 
         String tplName = "20";
 
-        loginAsAdmin();
+        loginAsAdmin("admin","4dm1n.123");
 
         adminActivity.tplEditText.setText(tplName);
         adminActivity.registerTplButton.clickControl();
@@ -31,7 +31,7 @@ public class AdminTest extends TestBase{
     }
     @Test
     public void checkDownloadFixedParameters(){
-        loginAsAdmin();
+        loginAsAdmin("admin","4dm1n.123");
         adminActivity.downloadFixedParametersButton.clickControl();
         //adminActivity
         Assertions.assertTrue(adminActivity.isConfirmFixedParameters());

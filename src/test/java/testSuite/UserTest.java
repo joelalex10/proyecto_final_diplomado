@@ -12,7 +12,7 @@ public class UserTest extends TestBase{
         String userName = "user20";
         String value = "0";
         String printerName = "endelp1";
-        loginAsUser(tplNumber, userName,printerName);
+
         userActivity.downloadLecturas.clickControl();
         Assertions.assertTrue(userActivity.facturasLabel.checkChangeValueLabel(value));
     }
@@ -25,7 +25,8 @@ public class UserTest extends TestBase{
         String nroConsumidor = "9981";
         String readingValue = "8000";
         String fecha = "22, sep. 2024";
-        loginAsUser(tplNumber, userName, printerName);
+        String userPassword = "1234";
+        loginAsUser("admin","4dm1n.123",tplNumber, userName, userPassword, printerName);
         userActivity.downloadLecturas.clickControl();
         userActivity.facturasLabel.checkChangeValueLabel(value);
         userActivity.empezarLecturas.clickControl();
@@ -47,7 +48,8 @@ public class UserTest extends TestBase{
         String value = "0";
         String nroConsumidor = "826518";
         String valorFotografias = "1/1";
-        loginAsUser(tplNumber, userName, printerName);
+        String userPassword = "1234";
+        loginAsUser("admin","4dm1n.123",tplNumber, userName, userPassword, printerName);
         userActivity.downloadLecturas.clickControl();
         userActivity.facturasLabel.checkChangeValueLabel(value);
         userActivity.empezarLecturas.clickControl();
